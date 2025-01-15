@@ -12,7 +12,7 @@ Prior experience in programming is helpful, but not a prerequisite. The programm
 
 There will be no assignments and no grading, but students are encouraged to run and experiment with the code on their own. The only way to learn this is by practicing!
 
-If you're interested in the course, please click here to join the mailing list.
+If you're interested in the course, please click [here](https://groups.mit.edu/webmoira/list/iap-coding-2025) to join the mailing list.
 
 ## Tentative Schedule
 The course is scheduled to meet for 8 sessions during IAP.
