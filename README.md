@@ -14,7 +14,7 @@ There will be no assignments and no grading, but students are encouraged to run 
 
 If you're interested in the course, please click [here](https://groups.mit.edu/webmoira/list/iap-coding-2025) to join the mailing list.
 
-**Before L1**, please: Follow these instructions to set up your computer. Another good resource to check out before taking this course is The Missing Semester of Your CS Education.
+**Before L1, please**: Follow [these instructions ](https://www.dropbox.com/scl/fi/1sk9pcel7cfhlrqj3bket/IAP_data_coding_prel_steps.pdf?rlkey=zrs6mjpxure5cms74d9b2dlsj&e=1&dl=0) to set up your computer. Another good resource to check out before taking this course is [The Missing Semester of Your CS Education](https://missing.csail.mit.edu/).
 
 ## Tentative Schedule
 The course is scheduled to meet for 8 sessions during IAP.
