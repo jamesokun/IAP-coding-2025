@@ -1,0 +1,33 @@
+\frametitle{A successful Git branching model}
+\framesubtitle{Supporting branches}
+
+    \normalsize\vspace{0.5em} Here is how to create a \alert{hotfix} branch, merge to \alert{master} and \alert{develop}, and delete it from the command line:
+
+    \vspace{-0.5em}
+    \begin{columns}
+        \begin{column}[t]{0.5\textwidth}
+            \begin{verbatim}
+    $ git checkout -b hotfix-1.2.1 master
+    Switched to a new branch "hotfix-1.2.1"
+    [...]
+    $ git checkout master
+    Switched to branch 'master'
+    $ git merge --no-ff hotfix-1.2.1
+    Merge made by recursive.
+    (Summary of changes)
+    $ git tag -a 1.2.1
+        \end{verbatim}
+        \end{column}
+
+        \begin{column}[t]{0.5\textwidth}
+            \begin{verbatim}
+    $ git checkout develop
+    Switched to branch 'develop'
+    $ git merge --no-ff hotfix-1.2.1
+    Merge made by recursive.
+    (Summary of changes)
+    $ git branch -d hotfix-1.2.1
+    Deleted branch hotfix-1.2.1 (was abbe5d6).
+        \end{verbatim}
+        \end{column}
+    \end{columns}

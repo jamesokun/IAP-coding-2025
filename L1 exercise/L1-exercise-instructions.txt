@@ -1,0 +1,70 @@
+1. Copy the "L1 exercise" folder somewhere in your computer
+
+2. Navigate to it in the terminal and run the master file with the command:
+    bash master.sh 
+
+NOTE: If you want to write the terminal outputs into a log file, you can do:
+    script NAME.log
+    bash master.sh
+    exit
+
+3. While the master file runs, let's explore:
+(a) The master file
+(b) The folder structure
+(c) A few of the code files
+
+4. Initialize a Git repo from the terminal with:
+    git init -b main
+
+5. If you are using GitHub Desktop, you can add the repo at this point in "Add/Add Existing Repository ..."
+
+6. Let's tell git to ignore the files that aren't code. In GitHub Desktop, you can access the .gitignore file in "Repository/Repository Settings ..." Otherwise, you will have to create a text file called .gitignore yourself. Add the following lines:
+
+# Ignore Everything:
+*
+
+# Except code, project files and paper:
+!master.sh
+!Project.toml
+!Manifest.toml
+!*.jl
+!paper.tex
+!*/
+
+# Ignore Jupyter notebook checkpoints, if any:
+.ipynb_checkpoints
+
+7. Commit Changes. From Github Desktop it's just one click, otherwise run the following in the terminal:
+    git add .
+    git commit -m "Initial commit"
+
+8. Publish. From GitHub, you just click the publish button, otherwise, you will then have to go to your GitHub page and copy the URL of the repo (see instructions at https://docs.github.com/en/get-started/importing-your-projects-to-github/importing-source-code-to-github/adding-locally-hosted-code-to-github). Finally, run:
+    git remote add origin <REMOTE_URL>
+    git remote -v
+Finally, push the commit to the remote with:
+    git push -u origin main
+
+9. Now, let's create another branch "develop." Do it from the branch tab in GithHub Desktop or from the terminal with:
+    git checkout -b develop
+
+Let's make some changes. For example, add the following lines to 0-build/code/0-1-simulate.jl:
+
+    FOC(p::Matrix{Float64}; α=α, δ=δ, ξ=ξ) = c::Matrix{Float64} .+ 1.0 ./ (α .* (1.0 .- shares(p, α=α, δ=δ, ξ=ξ)))
+
+    function eq_prices_FOC(; α=α, δ=δ, ξ=ξ)
+        res = fixedpoint(x -> FOC(x, α=α, δ=δ, ξ=ξ), ones(Float64, T, J))
+        return res.zero
+    end
+
+and change eq_prices_BR() for eq_prices_FOC() in the main() function.
+
+The change will show up in GitHub desktop (if you're using it). Commit in GitHub Desktop or the command line, with:
+    git add .
+    git commit -m "Compute eq price with FOC"
+
+Publish the branch with GitHub Desktop or:
+    git push -u origin develop 
+
+Create a pull request and merge (there should be no conflict as of now).
+
+10. Let's try to create and resolve a merge conflict. For that, let's change a file in the "develop" branch (it could be as simple as adding a comment). Let's change back to the "main" branch (remember that the terminal command is git checkout BRANCH_NAME) and add another comment in the same file. If you try to merge them, now you will get an error. You can resolve it on GitHub or the text editor.

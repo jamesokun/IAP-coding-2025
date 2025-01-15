@@ -1,0 +1,2 @@
+\beamer@sectionintoc {1}{Best Practices in Coding and Data Management}{3}{0}{1}
+\beamer@sectionintoc {2}{Version Control Using Git}{14}{0}{2}
