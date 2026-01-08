@@ -80,13 +80,6 @@ function eq_prices_BR(; α=α, δ=δ, ξ=ξ, c=c, tol = 1e-20, max_iter = 10000)
     return p
 end
 
-FOC(p::Matrix{Float64}; α=α, δ=δ, ξ=ξ) = c::Matrix{Float64} .+ 1.0 ./ (α .* (1.0 .- shares(p, α=α, δ=δ, ξ=ξ)))
-
-    function eq_prices_FOC(; α=α, δ=δ, ξ=ξ)
-        res = fixedpoint(x -> FOC(x, α=α, δ=δ, ξ=ξ), ones(Float64, T, J))
-        return res.zero
-    end
-
 function sim_shares(p::Matrix{Float64})
     
     s = zeros(Float64, T, J)
@@ -103,7 +96,7 @@ end
 
 # 4. Main function
 function main(out_path)
-    p = eq_prices_FOC()
+    p = eq_prices_BR()
     s = sim_shares(p)
     
     mkpath(out_path) # Create the directory for output in case it doesn't exist
