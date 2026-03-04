@@ -5,6 +5,8 @@ Instructor: James Okun (jokun@mit.edu)
 
 Organizer: Nikhil Agarwal
 
+We are grateful to Victor Quintas-Martinez for preparing many materials for this course. 
+
 ## Course Description
 This course is intended for students using empirical or quantitative methods in Economics, including students interested in econometrics, applied microeconomics and quantitative macroeconomics. It covers the basics of programming and numerical methods, with an emphasis on (a) best practices for replicability, (b) enhanced performance, and (c) improved approximation. The course aims to expand quantitative-focused students' toolboxes, familiarizing them with a variety of methods for different numerical problems (e.g. optimization, simulation, zero-solving, solving for equilibria, dynamic programming) and deepening their understanding of how the different algorithms work, their advantages and their disadvantages.
 
